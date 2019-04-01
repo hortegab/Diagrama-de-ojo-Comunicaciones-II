@@ -52,7 +52,12 @@ def eyediagram(y, window_size, offset=0, colorbar=True, **imshowkwargs):
                 extent=[0, 2, min_y, max_y],
                 **imshowkwargs)
     ax = _plt.gca()
-    ax.set_axis_bgcolor('k')
+
+    # En la siguiente linea estaba el comando  ax.set_axis_bgcolor('k')
+    # pero ese comando ya es obsoleto y se nos presentaba un error.
+    # entonces lo hemos cambiado por ax.set_facecolor('k') y todo de maravilla
+
+    ax.set_facecolor('k')
     _plt.grid(color='w')
     if colorbar:
         _plt.colorbar()
